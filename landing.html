@@ -1,0 +1,511 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SPACE ODDYSEY - NASA SPACEAPP LIMA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+        .container-fluid{
+            padding: 0 !important;
+            background-color: #000;
+        }
+        @font-face {
+            font-family: 'titillium';
+            src: url('static/font/TitilliumWeb-Regular.ttf');
+        }
+        @font-face {
+            font-family: 'titillium-light';
+            src: url('static/font/TitilliumWeb-ExtraLight.ttf');
+        }
+        @font-face {
+            font-family: 'titillium-bold';
+            src: url('static/font/TitilliumWeb-Bold.ttf');
+        }
+        body{
+            font-family: 'titillium';
+            background-color: #000;
+        }
+        .masthead {
+            height: 100vh;
+            min-height: 500px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .text-white{
+            color: #fff;
+        }
+        nav{
+            font-size: 18px;;
+        }
+        .margen_nav li{
+            padding-left: 40px !important;
+            padding-right: 40px !important;
+        }
+        .btn-callto{
+            --bs-btn-color: #fff;
+            --bs-btn-bg: #00B2FF;
+            --bs-btn-border-color: #00B2FF;
+            --bs-btn-hover-color: #fff;
+            --bs-btn-hover-bg: #00B2FF;
+            --bs-btn-hover-border-color: #00B2FF;
+            --bs-btn-focus-shadow-rgb: 49,132,253;
+            --bs-btn-active-color: #fff;
+            --bs-btn-active-bg: #00B2FF;
+            --bs-btn-active-border-color: #00B2FF;
+            --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+            --bs-btn-disabled-color: #fff;
+            --bs-btn-disabled-bg: #00B2FF;
+            --bs-btn-disabled-border-color: #00B2FF;
+        }
+        .btn-callto-shadow{
+            box-shadow: 0px 14px 44px 0px #298CEA80;
+        }
+        .bh1{
+            color: #fff;
+            font-size: 6rem;
+        }
+        .subida{
+            color: #fff;
+            font-family: 'titillium-light';
+            font-size: 20px;
+            letter-spacing: .5em;
+        }
+        form{
+            margin-top: -240px;
+            z-index: 2;
+            position: relative;
+            color: #fff;
+            background: rgba(24, 21, 24, 0.7);
+            border: 2px solid rgba(70, 112, 218, 1);
+            border-radius: 12px;
+        }
+        .buscar{
+            background-image: linear-gradient(rgba(55,25,30,1), rgba(27,13,15,1));
+            border: 1px solid #EB5757;
+            color: #EB5757;
+            margin-top: 22px;
+            padding: 10px 60px 10px 60px;
+        }
+        .selecter {
+            background: rgba(42, 45, 71, 0.8);
+            border: 1px solid rgba(42, 45, 71, 0.8);
+            color: #fff;
+            border-radius: 6px;
+        }
+        .form-select:disabled{
+            background: rgba(22, 23, 26, 0.8) !important;
+        }
+        .section2{
+            margin-top: 30px;
+            background-image: url(static/img/bg_espacio.png);
+        }
+        .sub2{
+            font-size: 14px;
+        }
+        .tit2{
+            font-size: 24px;
+            font-family: 'titillium-bold';
+        }
+        .sec2-par1{
+            padding: 80px;
+        }
+        .sec3-par1{
+            padding: 80px 80px 0 80px;
+        }
+        .card{
+            text-align: center;
+            color: #fff;
+            background-color: transparent;
+            align-items: center;
+        }
+        .card p{
+            font-size: 18px;
+        }
+        .card img{
+            max-height: 80px;
+            align-items: center;
+        }
+        .misiones{
+            width: 263px;
+            height: 308px;
+            border: 1px solid #00B2FF;
+            background-image: url(static/img/bg_misiones_planetas.png);
+            padding: 0 0 0 15px;
+            font-family: 'titillium-bold';
+            font-size: 20px;
+            line-height: 25px;
+        }
+        .mision-img{
+            margin-top: -70px;
+            margin-left: 70px;
+            padding-left: 15px;
+        }
+        .txt-mision{
+            margin-top: -60px;
+            font-family: 'titillium-light';
+            line-height: 20px;
+            font-size: 14px;
+        }
+        .nm-planeta{
+            font-size: 28px;
+            color: #00B2FF;
+            font-family: 'titillium-bold';
+        }
+        .txt-qhacemos{
+            font-family: 'titillium-light';
+            font-size: 16px;
+        }
+        .footer-bg{
+            background-image: url(image/logo1.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            margin-top: 80px;
+        }
+        .footer{
+            background-image: url(static/img/bg_footer.png);
+            padding: 20px;
+            overflow: hidden;
+        }
+        .menu-footer{
+            margin-top:40px;
+            padding-bottom: 40px;
+        }
+        @media only screen and (max-width: 600px) {
+            .bh1{
+                font-size: 3rem;
+            }
+            form{
+                margin-top: 0px;
+                
+            }
+            .bg-form{
+                background-color: #000;
+                padding: 30px 5px 30px 5px;
+            }
+            .section2{
+                margin-top: 0px;
+            }
+            .menu-footer{
+                margin-top:0px;
+                padding-bottom: 0px;
+            }
+        }
+        @media only screen and (max-width: 767px) and (min-width: 300px) {
+            .section2{
+                margin-top: -10px;
+            }
+            .mrgn-mbl2{
+                margin-top: 20px;
+            }
+            .sec3-par1 {
+                padding: 40px 80px 0 80px;
+            }
+            .menu-footer{
+                margin-top:0px;
+                padding-bottom: 0px;
+            }
+        }
+        @media only screen and (max-width: 991px) and (min-width: 300px) {
+            .mrgn-mbl{
+                margin-top: 20px;
+            }
+        }
+
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container" style="background-color: #4670da;">
+            <img src="image/logo1.png" style="margin-left: -15px; width: 100px;">
+                <!--<a class="navbar-brand" href="#">Start Bootstrap</a>-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto margen_nav">
+                        <li class="nav-item active">
+                            <a class="nav-link text-white" href="#" id="starchart-link">
+                                STARCHART
+                            <img src="image.png" id="starchart-img" style="display: none;">
+                              </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">ABOUT US</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">CONTACT</a>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-callto btn-lg btn-callto-shadow" onclick="window.location.href='sam1.html'">EXO-SKY</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="carouselExampleCaptions" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item masthead slider1 active">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <div class="col-12 text-center">
+                                <p class="subida">THE INTERGALACTIC ADVENTURE OF YOUR LIFE</p>
+                                <h1 class="bh1">DISCOVER <b>SPACE</b></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item masthead slider2">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <div class="col-12 text-center">
+                                <p class="subida">STEP INTO THE UNKNOWN AND EMBRACE THE ADVENTURE</p>
+                                <h1 class="bh1">LET'S GO TO <b>MARS</b></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item masthead slider3">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <div class="col-12 text-center">
+                                <p class="subida">DISCOVER THE HIDDEN SECRETS OF THIS FASCINATING MOON</p>
+                                <h1 class="bh1">THE GIANT <b>TITAN</b></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <div class="container bg-form">
+            <form class="p-5 mb-2 text-white">
+                <div class="row">
+                    <div class="col form-group">
+                        <label for="inputEmail4">CONSTELLATION NAME</label>
+                        <select class="form-select form-select-lg mb-3 selecter" aria-label=".form-select-lg example">
+                            <option selected>SELECT</option>
+                            <option value="1">ARIES</option>
+                            <option value="2">TAURUS</option>
+                            <option value="3">GEMINI</option>
+                            <option value="4">CANCER</option>
+                            <option value="5">LEO</option>
+                            <option value="6">VIRGO</option>
+                            <option value="7">LIBRA</option>
+                            <option value="8">SCORPIO</option>
+                            <option value="9">SAGITTARIUS</option>
+                            <option value="10">CAPRICORN</option>
+                            <option value="11">AQUARIUS</option>
+                            <option value="12">PISCES</option>
+                        </select>
+                    </div>
+                   
+                    <div class="col form-group">
+                        <button type="button" class="btn buscar btn-lg">SEARCH</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    
+    </div>
+    <!--
+    <div class="container-fluid section2">
+        <div class="container">
+            
+            <div class="row align-items-center">
+                <div class="col-12 text-center text-white sec2-par1">
+                    <p class="sub2">START NOW</p>
+                    <p class="tit2">PLAN YOUR SPACE JOURNEY</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 card">
+                    <img src="static/img/icon_lentes.svg" class="img-fluid" alt="...">
+                    <div class="card-body">
+                        <p class="card-title"><b>TAKE THE PHYSICAL FITNESS TEST</b></p>
+                        <p class="card-text">Achieve a minimum score of 90% to continue progressing.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 card">
+                    <img src="static/img/icon_calendario.svg" class="img-fluid" alt="...">
+                    <div class="card-body">
+                        <p class="card-title"><b>CHOOSE YOUR DESTINATION AND TRAVEL DATE</b></p>
+                        <p class="card-text">Keep in mind that the landing day may vary due to turbulence-related reasons.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 card">
+                    <img src="static/img/icon_nave.svg" class="img-fluid" alt="...">
+                    <div class="card-body">
+                        <p class="card-title"><b>SELECT YOUR MODE OF TRAVEL</b></p>
+                        <p class="card-text">We have both crewed and uncrewed rockets ready for travel.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 card">
+                    <img src="static/img/icon_mapa.svg" class="img-fluid" alt="...">
+                    <div class="card-body">
+                        <p class="card-title"><b>CHOOSE YOUR TOURIST ACTIVITIES</b></p>
+                        <p class="card-text">We have adrenaline-pumping and exciting tours perfect for you.</p>
+                    </div>
+                </div>
+            </div>
+            -->
+            <!-- Misiones -->
+            <div class="row align-items-center">
+                <div class="col-12 text-center text-white sec2-par1">
+                    <h1 class="about" style="font-size: 6rem; font-weight: bold;">ABOUT US</h1>
+                    <p class="tit2">NASA explores the unknown in air and space, innovates for the benefit of humanity, and inspires the world through discovery. For more than 65 years, NASA has made the seemingly impossible, possible. At its 20 centers and facilities across the country and with U.S. commercial companies and international partners, NASA leads studying Earth science, including climate, our Sun, solar system, and the larger universe. We conduct cutting-edge research to advance technology and aeronautics. We operate the world’s leading space laboratory, the International Space Station, and will establish a sustainable and strong exploration presence on the Moon this decade through the Artemis campaign.Many people know something about NASA’s work. But most probably have no idea about how many different things the agency does. Astronauts in orbit conduct scientific research. Satellites help scientists learn more about Earth. Space probes study the solar system and beyond. New developments improve air travel and other aspects of flight. NASA is also beginning a new program to send humans to explore the Moon and Mars. In addition to those major missions, NASA does many other things. The agency shares what it learns so that its information can make life better for people worldwide. For example, companies can use NASA discoveries to create new spinoff products.</p>
+                </div>
+            </div>
+            <div class="row container" style="padding: 200px;">
+                <div class="col">
+                    <div class="col-12 text-white misiones">
+                        <p class="card-title"><b><h4>51 Peg b</h4></b></b></p>
+                        <p> Discovered <br> on <br>6 October<br> 1995 </p>
+                     
+                        <img src="image/jupiter.gif" class="img-fluid mision-img" alt="..." style="width: 160px; margin-left: 50px; padding-top: 40px;">
+                        </div>
+                </div>
+                <div class="col mrgn-mbl2">
+                    <div class="col-12 text-white misiones">
+                        <p>HD 189733b</p>
+                       <p>Discovered<br>on<br>5 <br> October<br>2005</p>
+                        <img src="image/marte.gif" class="img-fluid mision-img" alt="..." style="width: 160px; margin-left: 50px; padding-top: 40px;">
+                         </div>
+                </div>
+                <div class="col mrgn-mbl">
+                    <div class="col-12 text-white misiones">
+                         <p>Kepler-69c</p>
+                         <p>Discovered <br> on <br> 7<br>January<br>2013</p>
+                        <img src="image/mercurio.gif" class="img-fluid mision-img" alt="..." style="width: 160px; margin-left: 50px; padding-top: 40px;">
+                        </div>
+                </div>
+            </div>
+            <!-- Acerca de -->
+            <div class="row align-items-center">
+                <div class="col-12 text-center text-white sec2-par1">
+                    <p class="sub2">ABOUT ASTROGENESIS</p>
+                    <p class="tit2">WHAT DO WE DO?</p>
+                </div>
+            </div>
+            <div class="row container">
+                <div class="col-md-8">
+                      
+                    <div class="col-12 text-white txt-qhacemos">
+                        <p>We are a passionate team of scientists, designers, and space educators who believe in the democratization of space exploration. At ASTROGENESIS, we have joined forces to offer a unique experience that combines space travel planning with an immersive education in the mysteries and wonders of the universe.</p>
+                        <p>At ASTROGENESIS, we have created an interactive platform that allows you to explore the cosmos from the comfort of your home, while guiding you through creating personalized itineraries to visit planets, moons, and other celestial destinations. But we don't stop there; we also believe in the importance of education and inspiration.</p>
+                        <p>Our mission is twofold: to enable space enthusiasts to plan their stellar adventures and to provide a profound educational experience every step of the way. From learning about geology to listening sounds, our platform is designed to nurture your curiosity and expand your knowledge of the cosmos.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="col-12 text-white">
+                        <img src="image/uni.jpg" class="img-fluid" alt="..." style="width: 500px;">
+                    </div>
+                </div>
+            </div>
+            <!-- Tu puedes ser -->
+            <div class="row align-items-center">
+                <div class="col-12 text-center text-white sec2-par1">
+                    <p class="sub2">A UNIQUE MOMENT</p>
+                    <p class="tit2">YOU CAN BE ONE OF THEN</p>
+                </div>
+            </div>
+           
+            </div>
+        </div>
+        <!-- Footer-->
+      <!--
+                    <div class="col-1"></div>
+                    <div class="col-sm-12 col-md-2">EXPLORE</div>
+                    <div class="col-sm-12 col-md-2">CONTRIBUTE</div>
+                    <div class="col-sm-12 col-md-2">CONTACT</div>
+                    <div class="col-sm-12 col-md-2">FAQ</div>
+                    <div class="col-sm-12 col-md-2">SUPPORT</div>
+                    <div class="col-1"></div>
+                </div>
+                -->
+                <!--<p class="">EXPLORA CONTRIBUIR CONTACTO FAQ SOPORTE</p>-->
+            </div>
+        </div>
+    </div>
+    <!--
+    <div class="container-fluid footer align-items-center">
+        <div class="container footer-bg align-items-center">
+            <div style="margin-top: 50px;"></div>
+            <div class="col-12 text-center text-white sec3-par1">
+                <img src="static/img/logo_nobg_tiny_spaceodyssey.png" class="img-fluid"></br>
+               
+                </div>
+            </div>
+        </div>
+    </div>
+-->
+    <script src="bootstrap-bundle-min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+    const starchartLink = document.getElementById('starchart-link');
+    const starchartImg = document.getElementById('starchart-img');
+
+    starchartLink.addEventListener('click', function() {
+    starchartImg.style.display = starchartImg.style.display === 'none' ? 'block' : 'none';
+    });
+	// ]]>
+</script>
+</body>
+</html>
