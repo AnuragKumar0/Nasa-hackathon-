@@ -1,126 +1,365 @@
-body {
-  color: #fffff1;
-  width: 100%;
-  cursor: pointer;
-  background: -webkit-linear-gradient(left top,  #000000, #001522); 
-  background: -o-linear-gradient(bottom right, #000000, #001522);
-  background: -moz-linear-gradient(bottom right, #000000, #001522);
-  background: linear-gradient(bottom right,  #000000, #001522);
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Sketch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/nasalization-2');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Mono';
+    color: #ffffff;
 }
 
-hr {
-  margin-top: 9vh;
-  margin-left: 3vh;
-  opacity: 0.3;
+html, body{
+    height: 100%;
+    width: 100%;
 }
 
-h5 {
-  margin-top: 6vh;
+body::-webkit-scrollbar {
+    display: none;
+  }
+
+#main{
+    max-width: 100%;
+    height: 100vh;
+    background-color: orangered;
 }
 
-.header {
-  position: absolute;
-  top: 0;
-  width: 100%;
+nav{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 10vh;
+    padding: 0vw 10vw;
+    z-index: 99;
 }
 
-.no-margin {
-  margin-top: 0;
-  margin-left: 0;
+nav a, i{
+    font-size: 1vw;
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Space Mono', monospace;
 }
 
-.user-text {
-  text-transform: uppercase;
-  background-color: transparent;
-  border: none;
-  width: 100%;
-  text-align: center;
-  outline: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
+.cntr-nav{
+    display: flex;
+    gap: 3vw;
 }
 
-.user-text:active {
-  border: none;
+nav i{
+    font-size: 1.5vw;
 }
 
-.margin-top {
-  margin-top: 10vh;
+.one{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background:linear-gradient(150deg, rgb(0 0 0), rgb(0 15 69));
 }
 
-.footer {
-  z-index: 20;
-  position: relative;
-  top: -20vh;
-  display: none;
-  opacity: 0;
+.one h1{
+    font-size: 25vw;
+    font-family: Product Sans B;
+    color: #fff;
+    font-family: 'Nasalization', sans-serif;
+    letter-spacing: 75px;
 }
 
-.canvas {
-  position: relative;
-  width: 100%;
+#earth{
+    position: absolute;
+    width: 25%;
+    z-index: 1;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)0.5s;
 }
 
-#splash{
-  z-index:10;
-  width:100%;
-  height:100%;
-  background: -webkit-linear-gradient(left top,  #000000, #001522); 
-  background: -o-linear-gradient(bottom right, #000000, #001522);
-  background: -moz-linear-gradient(bottom right, #000000, #001522);
-  background: linear-gradient(bottom right,  #000000, #001522);
-  position: absolute;
+#moon{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 10%;
+    z-index: 1;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)0.5s;
+
 }
 
-#fdstar{
-  background-image:url('assets/FD-Etoile-Bokeh.png');
-  background-position:center;
-  width:100%;
-  height:100%;
+#particles{
+    position: absolute;
+    width: 20%;
+    z-index: 3;
+    top: 55%;
+    right: 30%;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)0.5s;
+
 }
 
-#fdstar h1{
-  text-align:center;
-  font-size:2em;
-  color:white;
-  font-family:'Arial';
+#asteroid{
+    top: 10%;
+    left: 0%;
+    transform: rotate(60deg);
+    position: absolute;
+    width: 10%;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)0.5s;
+
 }
 
-#logo{
-  margin:15vh auto 25px auto;
-  width:90%;
+#asteroid2{
+    top: 70%;
+    left: 80%;
+    transform: rotate(-90deg);
+    position: absolute;
+    width: 12%;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)0.5s;
+
 }
 
-#instructions {
-  z-index:9;
-  background: url(assets/instructions.png) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  position: absolute;
+#astronaut{
+    position: absolute;
+    width: 20%;
+    top: 10%;
+    right: 0%;
 }
 
-#background {
-  z-index: 1;
-  position: absolute;
-  height: 100%;
+.two{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(150deg, rgb(0 0 0), rgb(0 15 69),rgb(255, 0, 0));;
 }
 
-#filter {
-  z-index: 2;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  display: none;
-  opacity: 0;
-  background-color: black;
+.lft-two, .rght-two{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5vh;
+    width: 50%;
+    height: 100%;
 }
 
-#foreground {
-  z-index: 3;
-  height: 100%;
+.lft-two svg{
+    margin-top: 50vh;
+    width: 90%;
+    transform: rotateX(50deg);
 }
+
+.rght-two h1{
+    color: #fff;
+    font-size: 5vw;
+}
+
+.rght-two p{
+    font-size: 1vw;
+    color: #fff;
+    width: 80%;
+}
+
+.three{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+    width: 100%;
+    height: 100vh;
+    background:linear-gradient(85deg, rgb(0, 15, 69), rgb(255, 0, 0));
+}
+
+.card{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2vh;
+    width: 25vw;
+    height: 70vh;
+    margin-top: 10vh;
+    border-radius: 20px;
+    background: linear-gradient(180deg, #fff, #ffffff00);
+}
+
+.card h1{
+    margin-top: 40vh;
+    font-size: 3vw;
+    color: rgb(0, 0, 0);
+}
+
+.card button{
+    font-size: 1vw;
+    border-radius: 50px;
+    border: none;
+    color: #fff;
+    background: linear-gradient(150deg, rgb(255 89 0), rgb(0 18 81 / 85%));
+    padding: 1vw 2vw;
+    font-family: 'Orbitron';
+}
+
+#planet1{
+    top: 3%;
+    position: absolute;
+    width: 85%;
+    left: 50.5%;
+    transform: translate(-50%, 0%);
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)0.5s;
+
+}
+
+#planet3{
+    top: -1%;
+    position: absolute;
+    width: 180%;
+    left: 50.5%;
+    transform: translate(-50%, 0%);
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)0.5s;
+
+}
+
+#planet4{
+    top: 3%;
+    position: absolute;
+    width: 85%;
+    left: 50.5%;
+    transform: translate(-50%, 0%);
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)0.5s;
+
+}
+
+.venus{
+    top: -11%;
+    position: absolute;
+    left: 25%;
+    width: 10vw;
+    transform: translate(-50%, 0%);
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)0.5s;
+}
+
+.explore-btn {
+    background: linear-gradient(150deg, rgb(241, 28, 28), rgb(17, 36, 103));
+    color: #fff;
+    border: none;
+    padding: 5px 6px;
+    font-size: 1vw;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  .explore-btn:hover {
+    background-color: #0b6cbf;
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .explore-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+.toggle-btn {
+    cursor: pointer;
+    background-color: #333;
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.toggle-btn:hover {
+    background-color: #555;
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+}
+
+.modal-content {
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    width: 80%; /* Could be more or less, depending on screen size */
+    background: linear-gradient(90deg, #00000000, #de4c0087);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(255, 50, 50, 0.3), 0 0 20px rgb(255 255 255);
+}
+
+.close-btn {
+    color: #ffffff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Custom bullet points using SVG */
+.custom-bullet {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+}
+
+.custom-bullet li {
+    position: relative;
+    padding-left: 30px; /* Space for custom bullet */
+    text-align: left; /* Align text to the left */
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.custom-bullet li:hover {
+    background-color: rgba(255, 255, 255, 1);
+    color: #000000;
+    font-weight: 700;
+}
+
+.custom-bullet li::before {
+    content: ''; /* Empty content */
+    position: absolute;
+    left: -0.5%;
+    top: 5%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    width: 20px; /* Width of the rocket */
+    height: 20px; /* Height of the rocket */
+    background-image: url('rocket.svg'); /* Path to your rocket SVG */
+    background-size: contain; /* Scale the image to fit */
+    background-repeat: no-repeat; /* Prevent repeating */
+    rotate: 90deg;
+    animation: glow 1.5s infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 10px #ffb300, 0 0 20px #ffb300, 0 0 30px #ffb300;
+    }
+    50% {
+        text-shadow: 0 0 15px #ffd500, 0 0 25px #ffd500, 0 0 35px #ffd500;
+    }
+}
+
