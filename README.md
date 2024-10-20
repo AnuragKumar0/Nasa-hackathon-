@@ -1,2 +1,15 @@
-# Nasa-hackathon-
-"This project is designed to solve the problem for NASA's Space Apps Challenge 2024. On this website, users will have access to detailed exoplanet data, star catalogs, interactive tools, astronomical learning, and creative expression. Users can explore distant worlds, craft unique constellations, and view 3D representations of the universe."
+# STELLAR DRAW
+Draw and laser-cut your personal constellation
+
+**DEMO**: http://gcool-info.github.io/stellardraw/
+
+![Logo](http://i.imgur.com/WSHDXkp.jpg)
+![Creation](http://i.imgur.com/FR1pCAL.jpg)
+
+In Stellar Draw, you have to draw your own constellation using the  real positions of stars. The software will then generate a custom visualisation of your creation. You will also be able to get a .svg file, ready for laser-cutting! Then, it's up to you to create a necklace, earings or even a keychain!
+
+![Laser-cut](/assets/laser_cut.JPG)
+
+_Note: you need to manipulate slightly the .svg file. This tutorial guides you through the process : http://www.instructables.com/id/Javascript-generated-laser-cut-jewellery/step9/Clean-it-up-in-inkscape/_
+
+Project for [Nasa's 2015 Space Challenge](https://2015.spaceappschallenge.org/) with D. Zanatta & Pierre-Antoine Laine.
