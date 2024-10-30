@@ -1,8 +1,3 @@
-# STELLAR DRAW
-Draw and laser-cut your personal constellation
-
-**DEMO**: http://gcool-info.github.io/stellardraw/
-
 ![Logo](http://i.imgur.com/WSHDXkp.jpg)
 ![Creation](http://i.imgur.com/FR1pCAL.jpg)
 
